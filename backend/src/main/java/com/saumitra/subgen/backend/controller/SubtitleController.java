@@ -15,7 +15,7 @@ public class SubtitleController {
         this.subtitleService = subtitleService;
     }
 
-    @PostMapping("subtitle")
+    @PostMapping("/subtitle")
     public SubtitleResponse generateSubtitle(@RequestBody SubtitleRequest subtitleRequest){
         String message = subtitleService.startSubtitleService(subtitleRequest.getVideoUrl());
         return new SubtitleResponse(message, subtitleRequest.getVideoUrl());
